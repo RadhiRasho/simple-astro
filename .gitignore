@@ -1,5 +1,6 @@
 # vs code
 .vscode
+.newvscode
 
 # node_modules
 node_modules
