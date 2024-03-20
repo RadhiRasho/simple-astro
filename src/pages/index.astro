@@ -1,41 +1,41 @@
 ---
-import { Card } from '@/components/Card'
-import type { User } from '@/types'
-import { Image } from 'astro:assets'
+import { Image } from "astro:assets";
+import { Card } from "@/components/Card";
+import type { User } from "@/types";
 
-let users: User[] = []
+let users: User[] = [];
 
 async function getData() {
-    const res = await fetch('https://randomuser.me/api?results=50')
-    const data = await res.json()
-    users = data.results
+	const res = await fetch("https://randomuser.me/api?results=50");
+	const data = await res.json();
+	users = data.results;
 }
 
-await getData()
+await getData();
 ---
 
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>Astro</title>
-    </head>
-    <body>
-        {
-            users.map((user) => {
-                return (
-                    <Card client:visible user={user}>
-                        <Image
-                            height={50}
-                            width={50}
-                            src={user.picture.large}
-                            alt="User"
-                        />
-                    </Card>
-                )
-            })
-        }
-    </body>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		{
+			users.map((user) => {
+				return (
+					<Card client:visible user={user}>
+						<Image
+							height={50}
+							width={50}
+							src={user.picture.large}
+							alt="User"
+						/>
+					</Card>
+				);
+			})
+		}
+	</body>
 </html>

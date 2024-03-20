@@ -1,20 +1,20 @@
-import type { User } from '@/types'
-import { useEffect, useState } from 'react'
-import { Card } from './Card'
-import { Image } from 'astro:assets'
+import { Image } from "astro:assets";
+import type { User } from "@/types";
+import { useEffect, useState } from "react";
+import { Card } from "./Card";
 
 export default function Counter() {
-	const [users, setUsers] = useState<User[]>([])
+	const [users, setUsers] = useState<User[]>([]);
 
 	async function getData() {
-		const res = await fetch('https://randomuser.me/api?results=25')
-		const data = await res.json()
-		setUsers(data.results)
+		const res = await fetch("https://randomuser.me/api?results=25");
+		const data = await res.json();
+		setUsers(data.results);
 	}
 
 	useEffect(() => {
-		getData()
-	}, [])
+		getData();
+	}, []);
 
 	return (
 		<>
@@ -29,9 +29,9 @@ export default function Counter() {
 								alt="user"
 							/>
 						</Card>
-					)
+					);
 				})}
 			</div>
 		</>
-	)
+	);
 }

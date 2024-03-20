@@ -1,5 +1,5 @@
-import type { User } from '@/types'
-import type { ReactNode } from 'react'
+import type { User } from "@/types";
+import type { ReactNode } from "react";
 
 export function Card({ user, children }: { user: User; children: ReactNode }) {
 	return (
@@ -9,5 +9,5 @@ export function Card({ user, children }: { user: User; children: ReactNode }) {
 				{user.name.first} {user.name.last}
 			</p>
 		</div>
-	)
+	);
 }
