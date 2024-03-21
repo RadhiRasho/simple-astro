@@ -1,31 +1,102 @@
 ---
+const pageTitle = "About Me";
 
+const identity = {
+    firstName: "Radhi",
+    lastName: "Rasho",
+    country: "America",
+    occupation: "web developer",
+    hobbies: ["reading", "writing", "coding"],
+};
+
+const skills = [
+    "Astro",
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "Git",
+    "GitHub",
+    "VS Code",
+];
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
-<body class="bg-black text-white p-2">
-    <div
-        class="flex justify-between w-fit gap-4 *:pointer-events-auto *:text-blue-400 hover:*:underline"
-    >
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/blog">Blog</a>
-    </div>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>{pageTitle}</title>
+    </head>
+    <body>
+        <div
+            class="flex justify-between w-fit gap-4 *:pointer-events-auto *:text-blue-400 hover:*:underline"
+        >
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/blog">Blog</a>
+        </div>
 
-    <br />
+        <br />
 
-    <h1>About Me</h1>
+        <h1>{pageTitle}</h1>
+        <h2>... and my new Astro site!</h2>
 
-    <br />
+        <p>
+            I am working through Astro's introductory tutorial. This is the
+            second page on my website, and it's the first one I built myself!
+        </p>
 
-    <h2>... and my new Astro site!</h2>
+        <p>
+            This site will update as I complete more of the tutorial, so keep
+            checking back and see how my journey is going!
+        </p>
 
-    <p>
-        I am working through Astro's introductory tutorial. This is the second
-        page on my website, and it's the first one I built myself!
-    </p>
+        <br />
 
-    <p>
-        This site will update as I complete more of the tutorial, so keep
-        checking back and see how my journey is going!
-    </p>
-</body>
+        <p>Here are a few facts about me</p>
+
+        <ul>
+            <li>My Name is {identity.firstName} {identity.lastName}.</li>
+            <li>
+                I live in {identity.country} and I work as a {
+                    identity.occupation
+                }.
+            </li>
+            {
+                identity.hobbies.length >= 2 && (
+                    <li>
+                        Some of my hobbies are: {identity.hobbies.join(", ")}
+                    </li>
+                )
+            }
+        </ul>
+
+        <br />
+        <p>My Skills are:</p>
+        <ul>
+            {skills.join(" | ")}
+        </ul>
+
+        <br />
+
+        {happy && <p>I am happy to be learning Astro!</p>}
+
+        {finished && <p class="text-purple-400">I finished this tutorial!</p>}
+
+        {
+            goal === 3 ? (
+                <p>My goal is to finish in 3 days.</p>
+            ) : (
+                <p>My goal is not 3 days.</p>
+            )
+        }
+    </body>
+</html>
