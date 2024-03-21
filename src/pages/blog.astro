@@ -1,4 +1,5 @@
 ---
+import "../styles/global.css";
 const pageTitle = "My Astro Learning Blog";
 ---
 
@@ -8,10 +9,8 @@ const pageTitle = "My Astro Learning Blog";
         <meta name="viewport" content="width=device-width" />
         <title>{pageTitle}</title>
     </head>
-    <body class="bg-black text-white p-2">
-        <div
-            class="flex justify-between w-fit gap-4 *:pointer-events-auto *:text-blue-400 hover:*:underline"
-        >
+    <body>
+        <div>
             <a href="/">Home</a>
             <a href="/about">About</a>
             <a href="/blog">Blog</a>
@@ -22,10 +21,10 @@ const pageTitle = "My Astro Learning Blog";
         <h1>{pageTitle}</h1>
         <p>This is where I will post about my journey learning Astro.</p>
 
-        <ul class="*:pointer-events-auto *:text-blue-400 hover:*:underline">
-            <li><a href="/posts/post-1">Post 1</a></li>
-            <li><a href="/posts/post-2">Post 2</a></li>
-            <li><a href="/posts/post-3">Post 3</a></li>
-        </ul>
+        <br />
+
+        <li><a href="/posts/post-1">Post 1</a></li>
+        <li><a href="/posts/post-2">Post 2</a></li>
+        <li><a href="/posts/post-3">Post 3</a></li>
     </body>
 </html>

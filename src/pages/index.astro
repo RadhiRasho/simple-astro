@@ -1,4 +1,6 @@
 ---
+import "../styles/global.css";
+
 const pageTitle = "Home Page";
 ---
 
@@ -11,14 +13,10 @@ const pageTitle = "Home Page";
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 	</head>
-	<body class="bg-black text-white p-2">
-		<div
-			class="flex justify-between w-fit gap-4 *:pointer-events-auto *:text-blue-400 hover:*:underline"
-		>
-			<a href="/">Home</a>
-			<a href="/about">About</a>
-			<a href="/blog">Blog</a>
-		</div>
+	<body>
+		<a href="/">Home</a>
+		<a href="/about">About</a>
+		<a href="/blog">Blog</a>
 
 		<br />
 

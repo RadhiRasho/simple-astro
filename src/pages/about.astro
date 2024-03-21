@@ -1,4 +1,5 @@
 ---
+import "../styles/global.css";
 const pageTitle = "About Me";
 
 const identity = {
@@ -27,6 +28,10 @@ const skills = [
 const happy = true;
 const finished = false;
 const goal = 3;
+
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 
 <html lang="en">
@@ -34,15 +39,22 @@ const goal = 3;
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
         <title>{pageTitle}</title>
+        <style define:vars={{ skillColor, fontWeight, textCase }}>
+            h1 {
+                color: purple;
+                font-size: 4rem;
+            }
+            .skill {
+                color: var(--skillColor);
+                font-weight: var(--fontWeight);
+                text-transform: var(--textCase);
+            }
+        </style>
     </head>
     <body>
-        <div
-            class="flex justify-between w-fit gap-4 *:pointer-events-auto *:text-blue-400 hover:*:underline"
-        >
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/blog">Blog</a>
-        </div>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/blog">Blog</a>
 
         <br />
 
@@ -82,14 +94,14 @@ const goal = 3;
         <br />
         <p>My Skills are:</p>
         <ul>
-            {skills.join(" | ")}
+            {skills.map((skill) => <li class="skill">{skill}</li>)}
         </ul>
 
         <br />
 
         {happy && <p>I am happy to be learning Astro!</p>}
 
-        {finished && <p class="text-purple-400">I finished this tutorial!</p>}
+        {finished && <p>I finished this tutorial!</p>}
 
         {
             goal === 3 ? (
