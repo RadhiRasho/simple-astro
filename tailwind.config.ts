@@ -1,8 +1,14 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-	content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+	content: ["./src/**/*.{astro,html,md,mdx,svelte,tsx}"],
 	theme: {
+		backgroundImage: {
+			prayer: "url(prayer.jpeg)",
+		},
 		extend: {},
 	},
 	plugins: [],
 };
+
+export default config;

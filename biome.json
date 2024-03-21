@@ -10,7 +10,7 @@
 			"complexity": {
 				"recommended": true
 			},
-			"nursery": {
+			"style": {
 				"recommended": true
 			}
 		}

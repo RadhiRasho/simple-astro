@@ -1,12 +1,12 @@
 ---
 import { Image } from "astro:assets";
 import { Card } from "@/components/Card";
-import type { User } from "@/types";
+import type { User } from "@/types/User";
 
 let users: User[] = [];
 
 async function getData() {
-	const res = await fetch("https://randomuser.me/api?results=50");
+	const res = await fetch("https://randomuser.me/api?results=25");
 	const data = await res.json();
 	users = data.results;
 }
@@ -20,22 +20,27 @@ await getData();
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Home</title>
 	</head>
-	<body>
-		{
-			users.map((user) => {
-				return (
-					<Card client:visible user={user}>
-						<Image
-							height={50}
-							width={50}
-							src={user.picture.large}
-							alt="User"
-						/>
-					</Card>
-				);
-			})
-		}
+	<body class="bg-prayer bg-no-repeat bg-cover">
+		<div
+			class="w-full grid grid-cols-4 gap-4 h-fit min-h-dvh max-h-dvh overflow-auto"
+		>
+			{
+				users.map((user) => {
+					return (
+						<Card client:visible user={user}>
+							<Image
+								loading="eager"
+								height={100}
+								width={100}
+								src={user.picture.large}
+								alt="User"
+							/>
+						</Card>
+					);
+				})
+			}
+		</div>
 	</body>
 </html>
