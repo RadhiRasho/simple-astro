@@ -1,17 +1,5 @@
 ---
-import { Image } from "astro:assets";
-import { Card } from "@/components/Card";
-import type { User } from "@/types/User";
 
-let users: User[] = [];
-
-async function getData() {
-	const res = await fetch("https://randomuser.me/api?results=25");
-	const data = await res.json();
-	users = data.results;
-}
-
-await getData();
 ---
 
 <html lang="en">
@@ -19,28 +7,21 @@ await getData();
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content="My First Astro Project" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Home</title>
 	</head>
-	<body class="bg-prayer bg-no-repeat bg-cover">
+	<body class="bg-black text-white p-2">
 		<div
-			class="w-full grid grid-cols-4 gap-4 h-fit min-h-dvh max-h-dvh overflow-auto"
+			class="flex justify-between w-fit gap-4 *:pointer-events-auto *:text-blue-400 hover:*:underline"
 		>
-			{
-				users.map((user) => {
-					return (
-						<Card client:visible user={user}>
-							<Image
-								loading="eager"
-								height={100}
-								width={100}
-								src={user.picture.large}
-								alt="User"
-							/>
-						</Card>
-					);
-				})
-			}
+			<a href="/">Home</a>
+			<a href="/about">About</a>
+			<a href="/blog">Blog</a>
 		</div>
+
+		<br />
+
+		<h1>My Astro Site</h1>
 	</body>
 </html>
