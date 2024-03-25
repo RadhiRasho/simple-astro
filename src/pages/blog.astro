@@ -1,30 +1,27 @@
 ---
+import Navigation from "@/components/Navigation.astro";
 import "../styles/global.css";
 const pageTitle = "My Astro Learning Blog";
 ---
 
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <title>{pageTitle}</title>
-    </head>
-    <body>
-        <div>
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/blog">Blog</a>
-        </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <Navigation />
 
-        <br />
+    <br />
 
-        <h1>{pageTitle}</h1>
-        <p>This is where I will post about my journey learning Astro.</p>
+    <h1>{pageTitle}</h1>
+    <p>This is where I will post about my journey learning Astro.</p>
 
-        <br />
+    <br />
 
-        <li><a href="/posts/post-1">Post 1</a></li>
-        <li><a href="/posts/post-2">Post 2</a></li>
-        <li><a href="/posts/post-3">Post 3</a></li>
-    </body>
+    <li><a href="/posts/post-1">Post 1</a></li>
+    <li><a href="/posts/post-2">Post 2</a></li>
+    <li><a href="/posts/post-3">Post 3</a></li>
+  </body>
 </html>

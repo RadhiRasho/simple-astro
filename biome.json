@@ -3,6 +3,9 @@
 	"organizeImports": {
 		"enabled": true
 	},
+	"javascript": {
+		"globals": ["Astro"]
+	},
 	"linter": {
 		"enabled": true,
 		"rules": {
@@ -16,7 +19,9 @@
 		}
 	},
 	"formatter": {
-		"enabled": true
+		"enabled": true,
+		"ignore": ["**/node_modules/**", "**/dist/**", "**/*.astro"],
+		"lineWidth": 120
 	},
 	"vcs": {
 		"enabled": true,
