@@ -24,6 +24,23 @@ const { frontmatter } = Astro.props;
         justify-content: space-between;
         gap: 1rem;
     }
+
+    .tags {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .tag {
+        margin: 0.25em;
+        border: dotted 1px #a1a1a1;
+        border-radius: 0.5em;
+        padding: 0.5em 1em;
+        font-size: 1.15em;
+        background-color: #9a5cd0;
+        text-decoration: none;
+    }
+    .tag:hover {
+        background-color: #7e3cb8;
+    }
 </style>
 
 <BaseLayout pageTitle={frontmatter.title}>
@@ -41,5 +58,15 @@ const { frontmatter } = Astro.props;
             />
         )
     }
+
+    <div class="tags">
+        {
+            frontmatter.tags.map((tag) => (
+                <a class="tag" href={`/tags/${tag}`}>
+                    {tag}
+                </a>
+            ))
+        }
+    </div>
     <slot />
 </BaseLayout>
