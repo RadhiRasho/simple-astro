@@ -16,4 +16,4 @@ pre-push:
       run: bunx biome check --no-errors-on-unmatched --files-ignore-unknown=true {push_files}
     Astro-Check:
       glob: "*.{astro}"
-      run: bun run build {staged_files} && git update-index --again
+      run: bun run build {push_files}
