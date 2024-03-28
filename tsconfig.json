@@ -3,7 +3,9 @@
 	"compilerOptions": {
 		"jsx": "react-jsx",
 		"jsxImportSource": "react",
+		"verbatimModuleSyntax": true,
 		"baseUrl": ".",
+		"exactOptionalPropertyTypes": false,
 		"paths": {
 			"@/*": ["src/*"]
 		},
@@ -12,5 +14,6 @@
 				"name": "@astrojs/ts-plugin"
 			}
 		]
-	}
+	},
+	"exclude": ["node_modules", "dist"]
 }

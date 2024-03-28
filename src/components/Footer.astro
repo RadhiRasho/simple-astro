@@ -1,0 +1,37 @@
+---
+import Social from "./Social.astro";
+const random = Math.floor(Math.random() * 4);
+const platform = ["GitHub", "LinkedIn", "Twitter", "Instagram"][random];
+
+const username = [
+    "RadhiRasho",
+    "radhi-rasho-7827b218a",
+    "RadhiH1",
+    "radhi_rasho",
+][random];
+
+const description = [
+    "Check out my repositories on ",
+    "Connect with me on ",
+    "Follow me on ",
+    "Follow me on ",
+][random];
+---
+
+<footer>
+    <p>
+        <Social
+            platform={platform}
+            username={username}
+            description={description}
+        />
+    </p>
+</footer>
+
+<style>
+    footer {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+</style>
