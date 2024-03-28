@@ -20,8 +20,7 @@
 	},
 	"formatter": {
 		"enabled": true,
-		"ignore": ["**/node_modules/**", "**/dist/**", "**/*.astro"],
-		"lineWidth": 120
+		"ignore": ["**/node_modules/**", "**/dist/**", "**/*.astro"]
 	},
 	"vcs": {
 		"enabled": true,

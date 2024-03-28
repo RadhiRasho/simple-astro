@@ -6,4 +6,7 @@ import preact from "@astrojs/preact";
 export default defineConfig({
 	integrations: [preact()],
 	site: "https://localhost:4321",
+	prefetch: {
+		prefetchAll: false,
+	},
 });

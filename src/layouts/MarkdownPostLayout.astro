@@ -1,20 +1,12 @@
 ---
+import type { InferEntrySchema } from "astro:content";
 import "@/styles/global.css";
 import BaseLayout from "./BaseLayout.astro";
 
 interface Props {
-    frontmatter: {
-        title: string;
-        description: string;
-        author: string;
-        pubDate: string;
-        image: {
-            url: string;
-            alt: string;
-        };
-        tags: string[];
-    };
+    frontmatter: InferEntrySchema<"posts">;
 }
+
 const { frontmatter } = Astro.props;
 ---
 
@@ -45,7 +37,7 @@ const { frontmatter } = Astro.props;
 
 <BaseLayout pageTitle={frontmatter.title}>
     <div class="Author">
-        <p>Written by: {frontmatter.author}</p>
+        <p>Written by: <a href="/about">{frontmatter.author}</a></p>
         <p>On: {frontmatter.pubDate.toString().slice(0, 10)}</p>
     </div>
     <br />

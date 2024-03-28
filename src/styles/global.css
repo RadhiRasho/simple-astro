@@ -2,16 +2,16 @@ html.dark {
     background-color: black;
     color: #fff;
     }
-    
+
     .dark a {
         color: #fff;
     }
-    
+
     html.light {
         background-color: white;
         color: black;
     }
-    
+
     .light {
         color: black;
 }
@@ -45,7 +45,7 @@ h1 {
     display: block;
     width: 40px;
     height: 5px;
-    /* margin-bottom: 10px; */
+    margin-bottom: 10px;
         background-color: #9a5cd0;
 }
 
@@ -67,7 +67,7 @@ h1 {
 
 .nav-links a:hover,
 .nav-links a:focus {
-    border-bottom: #9a5cd0 solid 2px;
+    text-decoration: 3px #9a5cd0 underline;
 }
 
 .expanded {
@@ -91,4 +91,17 @@ h1 {
     .hamburger {
         display: none;
     }
+}
+.greetingButton {
+    padding: 0.5rem 1rem;
+    color: white;
+    background-color: #9a5cd0;
+    border: white 1px solid;
+    text-decoration: none;
+}
+
+.greetingButton:hover,
+.greetingButton:focus {
+    cursor: pointer;
+    background-color: #7e3cb8;
 }
