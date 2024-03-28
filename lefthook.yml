@@ -1,4 +1,6 @@
+# yaml-language-server: $schema=https://json.schemastore.org/lefthook.json
 pre-commit:
+  parallel: true
   commands:
     Biome-Check:
       run: bunx biome check --apply --no-errors-on-unmatched --files-ignore-unknown=true {staged_files} && git update-index --again
@@ -7,6 +9,7 @@ pre-commit:
       run: bun run build {staged_files} && git update-index --again
 
 pre-push:
+  parallel: true
   commands:
     Biome-Check:
       glob: "*.{ts,tsx,json,jsonc}"
