@@ -1,7 +1,6 @@
 pre-commit:
   commands:
     Biome-Check:
-      glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
       run: bunx biome check --apply --no-errors-on-unmatched --files-ignore-unknown=true {staged_files} && git update-index --again
     Astro-Check:
       glob: "*.{astro}"
@@ -10,7 +9,7 @@ pre-commit:
 pre-push:
   commands:
     Biome-Check:
-      glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}"
+      glob: "*.{ts,tsx,json,jsonc}"
       run: bunx biome check --no-errors-on-unmatched --files-ignore-unknown=true {push_files}
     Astro-Check:
       glob: "*.{astro}"
