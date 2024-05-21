@@ -2,13 +2,10 @@
 	"extends": "astro/tsconfigs/strictest",
 	"compilerOptions": {
 		"jsx": "react-jsx",
-		"jsxImportSource": "preact",
+		"jsxImportSource": "react",
 		"verbatimModuleSyntax": true,
 		"baseUrl": "/workspaces/Rando/simple-astro",
 		"exactOptionalPropertyTypes": false,
-		"paths": {
-			"@/*": ["src/*"]
-		},
 		"plugins": [
 			{
 				"name": "@astrojs/ts-plugin"

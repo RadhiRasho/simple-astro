@@ -15,4 +15,12 @@ const postsCollection = defineCollection({
 	}),
 });
 
-export const collections = { posts: postsCollection };
+const wordsCollection = defineCollection({
+	type: "data",
+	schema: z.object({
+		word: z.string(),
+		translations: z.array(z.string()),
+	}),
+});
+
+export const collections = { posts: postsCollection, words: wordsCollection };

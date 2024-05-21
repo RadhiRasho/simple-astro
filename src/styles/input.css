@@ -1,0 +1,15 @@
+.input {
+    background-color: black;
+    outline: solid red;
+    color: white;
+    font-size: large;
+    width: 25%;
+}
+
+.correct {
+    background-color: black;
+    outline: solid green;
+    color: white;
+    font-size: large;
+    width: 25%;
+}

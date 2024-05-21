@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+import WordForm from "../components/WordForm";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const pageTitle = "Practice German";
+
+const WordCollection = await getCollection("words");
+
+function RandomWord() {
+    return WordCollection.at(Math.floor(Math.random() * WordCollection.length));
+}
+
+let word = RandomWord();
+
+async function GetNext() {
+    console.log("here");
+    word = RandomWord();
+}
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <WordForm
+        client:visible
+        word={word?.data.word}
+        translations={word?.data.translations}
+        GetNext={() => GetNext()}
+    />
+</BaseLayout>

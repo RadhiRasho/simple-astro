@@ -1,11 +1,11 @@
-import "@/styles/global.css";
-import { useState } from "preact/hooks";
+import { useState } from "react";
+import "../styles/global.css";
 
 interface Props {
 	messages: string[];
 }
 
-export default function Greetings({ messages }: Props) {
+export default function Greeting({ messages }: Props) {
 	const randomMessage = () =>
 		messages[Math.floor(Math.random() * messages.length)];
 
